@@ -1,32 +1,54 @@
-**Description:**
+# Sistem Informasi Akademik Kampus
 
-Project ini merupakan sistem informasi akademik sederhana yang dibangun menggunakan Laravel Framework dan MySQL
-Database. Sistem ini menyediakan fitur CRUD (Create, Read, Update, Delete) untuk mengelola data dosen, mahasiswa,
-jurusan, dan prodi. Sistem ini dibuat untuk memenuhi tugas Workshop Web.
+Sistem Informasi Akademik Kampus adalah aplikasi berbasis web yang dikembangkan menggunakan **Laravel** untuk memenuhi tugas mata kuliah **Workshop Web**.  
+Aplikasi ini digunakan untuk mengelola data akademik seperti Jurusan, Program Studi, Kelas, dan Mahasiswa, dengan penerapan konsep **MVC**, **routing**, **controller**, dan **relasi antar tabel** pada database.
 
-**Technologies Used:**
+Tujuan pembuatan proyek ini adalah agar saya memahami alur kerja pengembangan aplikasi web modern dengan Laravel, termasuk pembuatan CRUD, integrasi database, serta pengelolaan data secara terstruktur.
 
-*   Laravel Framework
-*   MySQL Database 
+---
 
-**Features:**
+## Fitur Utama
 
-*   **CRUD Dosen:**  Memungkinkan pembuatan, pembacaan, pembaruan, dan penghapusan data dosen.
-*   **CRUD Mahasiswa:** Memungkinkan pembuatan, pembacaan, pembaruan, dan penghapusan data mahasiswa.
-*   **CRUD Jurusan:** Memungkinkan pembuatan, pembacaan, pembaruan, dan penghapusan data jurusan.
-*   **CRUD Program Studi:** Memungkinkan pembuatan, pembacaan, pembaruan, dan penghapusan data program studi.
+- **Manajemen Data Jurusan**
+- **Manajemen Data Program Studi**
+- **Manajemen Data Kelas**
+- **Manajemen Data Mahasiswa**
+- Relasi antar tabel:
+  - Jurusan → Program Studi (One To Many)
+  - Program Studi → Kelas (One To Many)
+  - Kelas → Mahasiswa (One To Many)
 
-**Database Schema (Simplified):**
+---
 
-*   **Dosen Table:** (nip, namaDosen, jkel, alamat, tempatlahir, tanggallahir, agama, nohp, nokk)
-*   **Mahasiswa Table:** (nim, namaMahasiswa, jkel, alamat, tempatlahir, tanggallahir, agama, nohp, nokk, kodeprodi, idkelas)
-*   **Jurusan Table:** (kodejurusan, namajurusan, kajur, nipkajur, ket)
-*   **prodi Table:** (kodeprodi, namaprodi, statusakred, jenjang, kaprodi, nip kaprodi, ket, kodejurusan)
-*   **kelas Table:** (idkelas, namakelas, ket)
+## Teknologi yang Digunakan
 
-**Future Improvements:**
+| Teknologi / Tools | Keterangan |
+|------------------|-----------|
+| Laravel          | Framework Back-end |
+| Blade            | Template Engine |
+| MySQL  | Sistem Database |
+| Composer & NPM   | Dependency Management |
 
-*   Implementasi fitur login dan otentikasi pengguna.
-*   Desain UI yang lebih menarik dan user-friendly.
-*   Integrasi dengan layanan pihak ketiga.
-*   Implementasi fitur pencarian (search) data.
+---
+
+## Dokumentasi Tampilan
+
+| Halaman | Screenshot |
+|--------|------------|
+| Dashboard | ![Dashboard](public/screenshots/dashboard.png) (on prgress) |
+| Data Jurusan | ![Jurusan](public/screenshots/jurusan.png) (on progres)|
+| Data Program Studi | ![Prodi](public/screenshots/prodi.png) (on progres)|
+| Data Kelas | ![Kelas](public/screenshots/kelas.png) (on progres)|
+| Data Mahasiswa | ![Mahasiswa](public/screenshots/mahasiswa.png) |
+
+---
+
+## Pengembang
+**Nama:** Muhammad Dhiyaul Atha  
+**Mata Kuliah:** Workshop Web  
+**Program Studi:** Teknik Informatika  
+
+---
+
+## Repositori
+https://github.com/Bangkah/akademik

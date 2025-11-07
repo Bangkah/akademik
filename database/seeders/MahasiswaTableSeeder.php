@@ -1,49 +1,41 @@
 <?php
-
 namespace Database\Seeders;
-
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-
-class MahasiswaTableSeeder extends Seeder
+ 
+use Faker\Factory as Faker;
+ 
+ 
+class PegawaiSeeder extends Seeder
 {
-    /** 
-     * Run the database seeds.
-     */
-   
-        public function run(): void
+    /**
+ 	* Run the database seeds.
+ 	*
+ 	* @return void
+ 	*/
+    public function run()
     {
-        $mahasiswa = [
-            (new \App\Models\Mahasiswa())->namaMahasiswa('Budi Santoso')->nim('12345678')->jkel('L')->alamat('Jl.
-Merdeka No.
-1')->tempatLahir('Jakarta')
-->tanggalLahir('1999-05-10')
-->agama('Islam')
-->tempatLahir('Jakarta')
-->tanggalLahir('1999-05-10')
-->agama('Islam')->
-noTelp('08123456789')->
-noKK('1345')
-->email('budi@example.com')
-->id_program_studi(1),
-            (new \App\Models\Mahasiswa())->namaMahasiswa('Siti Aminah')->nim('98765432')->jkel('P')->alamat('Jl.
-Sudirman No.
-2')->tempatLahir('Surabaya')
-->tanggalLahir('1985-12-20')
-->agama('Islam')
-->noTelp('085777777777')
-->noKK('67890')
-->tempatLahir('Surabaya')
-->tanggalLahir('1985-12-20')
-->agama('Islam')
-->noTelp('085777777777')
-->noKK('67890')
-->email('siti@example.com')->id_program_studi(1),
-        ];
-
-        \App\Models\Mahasiswa::insert($mahasiswa);
+ 
+    	$faker = Faker::create('id_ID');
+ 
+    	for($i = 1; $i <= 50; $i++){
+ 
+    	      // insert data ke table pegawai menggunakan Faker
+    		DB::table('mahasiswas')->insert([
+    			'namaMahasiswa' => $faker->name,
+                'nim' => $faker->unique()->numerify('2025########'),
+    			'jkel' => $faker->numberBetween(25,40),
+    			'alamat' => $faker->address,
+                'tempatLahir' => $faker->city,
+                'tanggalLahir' => $faker->date,
+                'agama' => $faker->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu']),
+                'noTelp' => $faker->phoneNumber,
+                'noKK' => $faker->numerify('################'),
+                'email' => $faker->unique()->safeEmail,
+    		]);
+ 
+    	}
+ 
     }
-    }
-
+}
