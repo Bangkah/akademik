@@ -9,7 +9,11 @@
      <div class="container">
         <div class="header">
             <div class="breadcrumb">
-                <a href="../">Dashboard</a> / Data Mahasiswa
+                <a href="../">Dashboard</a> 
+                <a href="mahasiswa">mahasiswa</a>
+                <a href="dosen">dosen</a>
+                <a href="jurusan">jurusan</a>
+                <a href="prodi">prodi</a>
             </div>
             <h1>Data Mahasiswa</h1>
             <p>Kelola data mahasiswa Politeknik Negeri Lhokseumawe</p>
