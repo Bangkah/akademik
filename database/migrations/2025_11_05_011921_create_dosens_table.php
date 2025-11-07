@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
+            $NamaDosen = $table->string('namaDosen');
+            $table->string('nidn')->unique();
+            $table->string("jkel");
+            $table->string('alamat');
+            $table->string('tempatLahir');
+            $table->date('tanggalLahir');
+            $table->string('agama');
+            $table->string('noTelp')->unique();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

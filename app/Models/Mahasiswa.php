@@ -14,5 +14,8 @@ class Mahasiswa extends Model
         'nim',
         'email',
         'jurusan',
+        'alamat',
+        'tanggalLahir',
+        'noTelp',
     ];
 }
