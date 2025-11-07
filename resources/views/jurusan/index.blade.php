@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+           table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .form {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <a href="../">Dashboard</a>
@@ -12,5 +47,35 @@
     <a href="jurusan">jurusan</a>
     <a href="prodi">prodi</a>
     <h1>tabel jurusan</h1>
+
+    <div class="form">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Jurusan</th>
+                    <th>Nama Jurusan</th>
+                    <th>Ketua Jurusan/th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($jurusans as $index => $j)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $j->kode_jurusan }}</td>
+                    <td>{{ $j->nama_jurusan }}</td>
+                    <td>
+                        <a href="{{ route('jurusan.edit', $j->kode_jurusan) }}" class="btn btn-warning btn-sm">✏️ Edit</a>
+                        <form action="{{ route('jurusan.destroy', $j->kode_jurusan) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">🗑️ Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

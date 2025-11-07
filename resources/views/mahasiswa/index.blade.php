@@ -4,77 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
 </head>
 <body>
-     <div class="container">
-        <div class="header">
-            <div class="breadcrumb">
-                <a href="../">Dashboard</a> 
-                <a href="mahasiswa">mahasiswa</a>
-                <a href="dosen">dosen</a>
-                <a href="jurusan">jurusan</a>
-                <a href="prodi">prodi</a>
-            </div>
-            <h1>Data Mahasiswa</h1>
-            <p>Kelola data mahasiswa Politeknik Negeri Lhokseumawe</p>
-        </div>
-        
-        <div class="table-container">
-            <?php if (empty($mahasiswa)): ?>
-                <div class="no-data">
-                    <h3>Tidak ada data mahasiswa</h3>
-                    <p>Silakan tambah data mahasiswa baru</p>
-                </div>
-            <?php else: ?>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>NIM</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Alamat</th>
-                            <th>Kelas</th>
-                            <th>Program Studi</th>
-                            <th>Jurusan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                        $no = $offset + 1;
-                        foreach ($mahasiswa as $row): 
-                        ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><strong><?= escape($row['nim']) ?></strong></td>
-                            <td><?= escape($row['nama_mahasiswa']) ?></td>
-                            <td><?= escape($row['alamat'] ?? '-') ?></td>
-                            <td><?= escape($row['nama_kelas'] ?? '-') ?></td>
-                            <td><?= escape($row['nama_prodi'] ?? '-') ?></td>
-                            <td><?= escape($row['nama_jurusan'] ?? '-') ?></td>
-                            <td>
-                                <a href="edit.php?nim=<?= urlencode($row['nim']) ?>" class="btn btn-warning btn-sm">✏️ Edit</a>
-                                <a href="delete.php?nim=<?= urlencode($row['nim']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">🗑️ Hapus</a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                
-                <!-- Pagination -->
-                <?php if ($totalPages > 1): ?>
-                <div class="pagination">
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <?php if ($i == $page): ?>
-                            <span class="current"><?= $i ?></span>
-                        <?php else: ?>
-                            <a href="?page=<?= $i ?><?= $search ? "&search=" . urlencode($search) : '' ?>"><?= $i ?></a>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                </div>
-                <?php endif; ?>
-            <?php endif; ?>
-        </div>
+    <a href="../">Dashboard</a>
+    <a href="mahasiswa">mahasiswa</a>
+    <a href="dosen">dosen</a>
+    <a href="jurusan">jurusan</a>
+    <a href="prodi">prodi</a>
+    <h1>tabel mahasiswa</h1>
+
+    <div class="form">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tempat Lahir</th>
+                    <th>tanggalLahir</th>
+                    <th>Alamat</th>
+                    <th>agama</th>
+                    <th>No Hp</th>
+                    <th>Email</th>
+                    <th>No KK</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($mahasiswas as $mahasiswa)
+                <tr>
+                    <td>{{ $mahasiswa->namamahasiswa }}</td>
+                    <td>{{ $mahasiswa->nim }}</td>
+                    <td>{{ $mahasiswa->jkel }}</td>
+                    <td>{{ $mahasiswa->alamat }}</td>
+                    <td>{{ $mahasiswa->tempatlahir }}</td>
+                    <td>{{ $mahasiswa->tanggallahir }}</td>
+                    <td>{{ $mahasiswa->agama }}</td>
+                    <td>{{ $mahasiswa->noTelp }}</td>
+                    <td>{{ $mahasiswa->email }}</td>
+                    <td>{{ $mahasiswa->noKK }}</td>
+                    <td>
+                        <a href="{{ route('mahasiswa.edit', $mahasiswa->nim) }}">✏️ Edit</a>
+                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST" >
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Yakin ingin menghapus data ini?')">🗑️ Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

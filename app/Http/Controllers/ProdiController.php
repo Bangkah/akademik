@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\prodi;
 
 class ProdiController extends Controller
 {
@@ -11,7 +12,8 @@ class ProdiController extends Controller
      */
     public function index()
     {
-        return view('prodi.index');
+        $prodis = Prodi::all();
+        return view('prodi.index', compact('prodis'));
     }
 
     /**
