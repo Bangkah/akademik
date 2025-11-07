@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nim')->unique();
             $table->string("jkel");
             $table->string('alamat');
-            $table->string('tampatLahir');
+            $table->string('tempatLahir');
             $table->date('tanggalLahir');
             $table->string('agama');
             $table->string('noTelp')->unique();

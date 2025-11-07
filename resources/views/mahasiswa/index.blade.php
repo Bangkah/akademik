@@ -6,7 +6,7 @@
     <title>Document</title>
 
      <style>
-        /* Reset sederhana */
+/* Reset sederhana */
 body {
     margin: 0;
     padding: 0;
@@ -65,37 +65,8 @@ th, td {
     text-align: center;
 }
 
-/* Hover baris */
 tbody tr:hover {
     background: #f1f1f1;
-}
-
-/* Tombol */
-.btn {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.btn-warning {
-    background: #ffc107;
-    color: black;
-}
-
-.btn-warning:hover {
-    background: #e0a800;
-}
-
-.btn-danger {
-    background: #dc3545;
-    color: white;
-}
-
-.btn-danger:hover {
-    background: #b02a37;
 }
 
      </style>
@@ -112,35 +83,35 @@ tbody tr:hover {
         <table>
             <thead>
                 <tr>
-                    <th>Nama</th>
-                    <th>NIM</th>
                     <th>Nama Mahasiswa</th>
+                    <th>NIM</th>
                     <th>Jenis Kelamin</th>
                     <th>Tempat Lahir</th>
-                    <th>tanggalLahir</th>
+                    <th>Tanggal Lahir</th>
                     <th>Alamat</th>
-                    <th>agama</th>
-                    <th>No Hp</th>
+                    <th>Agama</th>
+                    <th>No HP</th>
                     <th>Email</th>
                     <th>No KK</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($mahasiswas as $mahasiswa)
                 <tr>
-                    <td>{{ $mahasiswa->namamahasiswa }}</td>
+                    <td>{{ $mahasiswa->namaMahasiswa }}</td>
                     <td>{{ $mahasiswa->nim }}</td>
                     <td>{{ $mahasiswa->jkel }}</td>
+                    <td>{{ $mahasiswa->tempatLahir }}</td>
+                    <td>{{ $mahasiswa->tanggalLahir }}</td>
                     <td>{{ $mahasiswa->alamat }}</td>
-                    <td>{{ $mahasiswa->tempatlahir }}</td>
-                    <td>{{ $mahasiswa->tanggallahir }}</td>
                     <td>{{ $mahasiswa->agama }}</td>
                     <td>{{ $mahasiswa->noTelp }}</td>
                     <td>{{ $mahasiswa->email }}</td>
                     <td>{{ $mahasiswa->noKK }}</td>
                     <td>
                         <a href="{{ route('mahasiswa.edit', $mahasiswa->nim) }}">✏️ Edit</a>
-                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST" >
+                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Yakin ingin menghapus data ini?')">🗑️ Hapus</button>
