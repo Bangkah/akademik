@@ -4,9 +4,103 @@
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
-@tailwindplus/elements
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+/* ====== Layout ====== */
+body {
+    background: #f5f6fa;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container halaman */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Wrapper tabel biar bisa scroll jika kolom banyak */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Style tabel umum */
+.table-basic {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-size: 14px;
+}
+
+.table-basic thead {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+.table-basic th,
+.table-basic td {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table-basic tbody tr:hover {
+    background: #f1f5f9;
+}
+
+/* Tombol umum */
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Tambah Data */
+.btn-add {
+    background: #2563eb;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.btn-add:hover {
+    background: #1d4ed8;
+}
+
+/* Edit */
+.btn-edit {
+    background: #facc15;
+    color: #000;
+}
+.btn-edit:hover {
+    background: #eab308;
+}
+
+/* Hapus */
+.btn-delete {
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+/* Agar form delete inline tidak turun */
+td form {
+    display: inline;
 }

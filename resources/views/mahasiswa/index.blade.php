@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+   @vite(['resources/css/app.css', 'resources/css/style.css', 'resources/js/app.js'])
+   <style>
+    table {
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        margin-top: 20px;
+        display: center;
+        justify-content: center;
+        align-items: center;
+    }
+   </style>
 </head>
 <body>
    @include('components.navbar')
-    <h1>tabel mahasiswa</h1>
+    
+    <div class="container">
+        
+        <a href="" class="btn btn-add">+ Tambah Mahasiswa</a>
 
-    <div class="form">
-        <table>
+        <div class="table-wrapper">
+        <table class="table-basic">
             <thead>
                 <tr>
                     <th>Nama Mahasiswa</th>
@@ -23,7 +39,7 @@
                     <th>Agama</th>
                     <th>No HP</th>
                     <th>Email</th>
-                    <th>No KK</th>
+                    
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -39,19 +55,22 @@
                     <td>{{ $mahasiswa->agama }}</td>
                     <td>{{ $mahasiswa->noTelp }}</td>
                     <td>{{ $mahasiswa->email }}</td>
-                    <td>{{ $mahasiswa->noKK }}</td>
+                    
                     <td>
-                        <a href="{{ route('mahasiswa.edit', $mahasiswa->nim) }}">✏️ Edit</a>
-                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST">
+                        <a href="" class="btn btn-edit">Edit</a>
+                        <form action="" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Yakin ingin menghapus data ini?')">🗑️ Hapus</button>
+                            <button class="btn btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        </div>
+
     </div>
 </body>
+
 </html>

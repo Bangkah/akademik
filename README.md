@@ -9,25 +9,29 @@ Tujuan pembuatan proyek ini adalah agar saya memahami alur kerja pengembangan ap
 
 ## Fitur Utama
 
-- **Manajemen Data Jurusan**
-- **Manajemen Data Program Studi**
-- **Manajemen Data Kelas**
-- **Manajemen Data Mahasiswa**
-- Relasi antar tabel:
-  - Jurusan → Program Studi (One To Many)
-  - Program Studi → Kelas (One To Many)
-  - Kelas → Mahasiswa (One To Many)
+- CRUD Data **Jurusan**
+- CRUD Data **Program Studi**
+- CRUD Data **Kelas**
+- CRUD Data **Mahasiswa**
+- Relasi antar tabel (One to Many):
+  - Jurusan → Prodi
+  - Prodi → Kelas
+  - Kelas → Mahasiswa
+- Tampilan responsif & rapi dengan **Tailwind CSS**
 
 ---
 
 ## Teknologi yang Digunakan
 
-| Teknologi / Tools | Keterangan |
-|------------------|-----------|
-| Laravel          | Framework Back-end |
-| Blade            | Template Engine |
-| MySQL  | Sistem Database |
-| Composer & NPM   | Dependency Management |
+| Teknologi / Tools | Peran |
+|------------------|-------|
+| Laravel | Backend & Routing |
+| Blade | Template View Engine |
+| MySQL | Database |
+| Tailwind CSS | Styling Frontend |
+| Vite | Asset Bundler |
+| Composer | Manajemen Dependency PHP |
+| NPM | Build dan Compile Asset |
 
 ---
 
@@ -35,15 +39,14 @@ Tujuan pembuatan proyek ini adalah agar saya memahami alur kerja pengembangan ap
 
 | Halaman | Screenshot |
 |--------|------------|
-| Dashboard | ![Dashboard](public/screenshots/dashboard.png) (on prgress) |
-| Data Jurusan | ![Jurusan](public/screenshots/jurusan.png) (on progres)|
-| Data Program Studi | ![Prodi](public/screenshots/prodi.png) (on progres)|
-| Data Kelas | ![Kelas](public/screenshots/kelas.png) (on progres)|
+| Dashboard | ![Dashboard](public/screenshots/dashboard.png) |
+| Data Jurusan | ![Jurusan](public/screenshots/jurusan.png) |
+| Data Program Studi | ![Prodi](public/screenshots/prodi.png) |
 | Data Mahasiswa | ![Mahasiswa](public/screenshots/mahasiswa.png) |
 
 ---
 
-## Pengembang
+## Dev
 **Nama:** Muhammad Dhiyaul Atha  
 **Mata Kuliah:** Workshop Web  
 **Program Studi:** Teknik Informatika  
