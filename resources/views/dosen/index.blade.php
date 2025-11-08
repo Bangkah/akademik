@@ -8,12 +8,7 @@
      
 </head>
 <body>
-  
-     <a href="../">Dashboard</a>
-    <a href="mahasiswa">mahasiswa</a>
-    <a href="dosen">dosen</a>
-    <a href="jurusan">jurusan</a>
-    <a href="prodi">prodi</a>
+  @include('components.navbar')
    
     <h1>tabel dosen</h1>
     
