@@ -23,17 +23,19 @@
                 <th>No</th>
                 <th>NIDN</th>
                 <th>Nama Dosen</th>
+                <th>jabatan</th>
                 <th>Alamat</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($dosens as $index => $d)
+            @foreach ($dosens as $index=> $dosen)
             <tr>
                 <td>{{ $index + 1 }}</td>
-                <td>{{ $d->nidn }}</td>
-                <td>{{ $d->nama_dosen }}</td>
-                <td>{{ $d->alamat ?? '-' }}</td>
+                <td>{{ $dosen->nidn }}</td>
+                <td>{{ $dosen->namaDosen }}</td>
+                <td>{{ $dosen->jabatan}}</td>
+                <td>{{ $dosen->alamat ?? '-' }}</td>
                 <td>
                     <a href="" class="btn btn-edit">Edit</a>
                     <form action="" method="POST" style="display:inline;">
@@ -45,6 +47,8 @@
             </tr>
             @endforeach
         </tbody>
+       <caption class="caption-bottom md:caption-bottom">Table Dosen</caption>
+
     </table>
 
 </div>

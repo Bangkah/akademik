@@ -43,7 +43,7 @@ Tujuan pembuatan proyek ini adalah agar saya memahami alur kerja pengembangan ap
 | Data Jurusan | ![Jurusan](public/screenshots/jurusan.png) |
 | Data Program Studi | ![Prodi](public/screenshots/prodi.png) |
 | Data Mahasiswa | ![Mahasiswa](public/screenshots/mahasiswa.png) |
-| Data Dosen |![Dosen](public/screenshots/mahasiswa.png) |
+| Data Dosen |![Dosen](public/screenshots/dosen.png) |
 
 ---
 

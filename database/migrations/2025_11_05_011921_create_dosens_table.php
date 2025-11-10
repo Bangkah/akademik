@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $NamaDosen = $table->string('namaDosen');
             $table->string('nidn')->unique();
+            $table->string('jabatan');
             $table->string("jkel");
             $table->string('alamat');
             $table->string('tempatLahir');

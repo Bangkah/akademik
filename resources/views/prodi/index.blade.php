@@ -23,12 +23,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($prodis as $index => $p)
+                @foreach ($prodis as $index => $prodi)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $p->namaProdi }}</td>
-                    <td>{{ $p->kodeProdi }}</td>
-                    <td>{{ $p->kaprodi}}</td>
+                    <td>{{ $prodi->namaProdi }}</td>
+                    <td>{{ $prodi->kodeProdi }}</td>
+                    <td>{{ $prodi->kaprodi}}</td>
                     <td>
                     <a href="" class="btn btn-edit">Edit</a>
                     <form action="" method="POST" style="display:inline;">
@@ -39,6 +39,7 @@
                 </td>
                 @endforeach
             </tbody>
+             <caption class="caption-bottom md:caption-bottom">Table Prodi</caption>
         </table>
     </div>
 </body>

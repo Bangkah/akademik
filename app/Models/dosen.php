@@ -13,6 +13,7 @@ class dosen extends Model
     protected $fillable = [
         'namaDosen',
         'nidn',
+        'jabatan',
         'jkel',
         'alamat',
         'tempatLahir',

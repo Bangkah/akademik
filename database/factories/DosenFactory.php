@@ -12,6 +12,7 @@ class DosenFactory extends Factory
             'namaDosen' => $this->faker->name(),
             'nidn' => $this->faker->unique()->numerify('########'), // 8 angka acak
             'jkel' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
+            'jabatan' => $this->faker->randomElement(['Asisten Ahli', 'Lektor', 'Lektor Kepala', 'Guru Besar']),
             'alamat' => $this->faker->address(),
             'tempatLahir' => $this->faker->city(),
             'tanggalLahir' => $this->faker->date(),

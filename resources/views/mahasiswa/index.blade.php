@@ -6,10 +6,12 @@
     <title>Document</title>
    @vite(['resources/css/app.css', 'resources/css/style.css', 'resources/js/app.js'])
    <style>
+    @import "tailwindcss";
     table {
         font-size: 14px;
         justify-content: center;
         align-items: center;
+        padding: 9px;
     }
     .container {
         margin-top: 20px;
@@ -30,6 +32,7 @@
         <table class="table-basic">
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Nama Mahasiswa</th>
                     <th>NIM</th>
                     <th>Jenis Kelamin</th>
@@ -44,8 +47,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($mahasiswas as $mahasiswa)
+                @foreach ($mahasiswas as $index=> $mahasiswa)
                 <tr>
+                    <td>{{ $index + 1}}</td>
                     <td>{{ $mahasiswa->namaMahasiswa }}</td>
                     <td>{{ $mahasiswa->nim }}</td>
                     <td>{{ $mahasiswa->jkel }}</td>
@@ -67,6 +71,7 @@
                 </tr>
                 @endforeach
             </tbody>
+            <caption class="caption-bottom md:caption-bottom">Table Mahasiswa</caption>
         </table>
         </div>
 
