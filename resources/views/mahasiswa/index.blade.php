@@ -4,30 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   @vite(['resources/css/app.css', 'resources/css/style.css', 'resources/js/app.js'])
-   <style>
-    @import "tailwindcss";
-    table {
-        font-size: 14px;
-        justify-content: center;
-        align-items: center;
-        padding: 9px;
-    }
-    .container {
-        margin-top: 20px;
-        display: center;
-        justify-content: center;
-        align-items: center;
-    }
-   </style>
+     @vite(['resources/css/app.', 'resources/js/app.js'])
 </head>
 <body>
    @include('components.navbar')
     
     <div class="container">
-        
         <a href="" class="btn btn-add">+ Tambah Mahasiswa</a>
-
         <div class="table-wrapper">
         <table class="table-basic">
             <thead>

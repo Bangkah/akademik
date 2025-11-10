@@ -35,6 +35,7 @@ body {
 .table-wrapper {
     overflow-x: auto;
     margin-top: 20px;
+    width: 100%;
 }
 
 /* Style tabel umum */

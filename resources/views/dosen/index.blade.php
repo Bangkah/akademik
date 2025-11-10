@@ -12,9 +12,6 @@
   @include('components.navbar')
 
   <div class="container">
-
-    <h1>Tabel Dosen</h1>
-
     <a href="" class="btn btn-add">+ Tambah Dosen</a>
 
     <table class="table-basic">
