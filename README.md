@@ -1,3 +1,6 @@
+<!-- dev: Muhammad Dhiyaul Atha
+repo: https://github.com/Bangkah/akademik -->
+
 # Sistem Informasi Akademik Kampus
 
 Sistem Informasi Akademik Kampus adalah aplikasi berbasis web yang dikembangkan menggunakan **Laravel** untuk memenuhi tugas mata kuliah **Workshop Web**.  
@@ -54,5 +57,3 @@ Tujuan pembuatan proyek ini adalah agar saya memahami alur kerja pengembangan ap
 
 ---
 
-## Repositori
-https://github.com/Bangkah/akademik
